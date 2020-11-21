@@ -28,11 +28,21 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], f
        /**
         * File Controller
         */
-       route::get('files/list', 'FileController@list')->name('files.list');
-       route::post('files/upload', 'FileController@upload')->name('files.upload');
-       route::post('files/update', 'FileController@update')->name('files.update');
-       route::get('files/{id}/delete', 'FileController@delete')->name('files.delete');
+       route::get('files/list', 'FileController@list')->name('files.v1_list');
+       route::post('files/upload', 'FileController@upload')->name('files.v1_upload');
+       route::post('files/update', 'FileController@update')->name('files.v1_update');
+       route::get('files/{id}/delete', 'FileController@delete')->name('files.v1_delete');
 
+
+        /**
+         * Post
+         */
+        route::get('posts', 'PostController@get')->name('posts.v1_index');
+        route::get('posts/{id}/show', 'PostController@show')->name('posts.v1_show');
+        route::post('posts/create', 'PostController@create')->name('posts.v1_create');
+        route::post('posts/update', 'PostController@update')->name('posts.v1_update');
+        route::post('posts/update-status', 'PostController@updateStatus')->name('posts.v1_update_status');
+        route::get('posts/{id}/delete', 'PostController@delete')->name('posts.v1_delete');
 
    });
 

@@ -5,7 +5,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Services\Api\V1\Auth\AuthService;
+use App\Services\Api\V1\Post\PostService;
 use App\Services\Api\V1\Auth\IAuthService;
+use App\Services\Api\V1\Post\IPostService;
 
 
 
@@ -33,6 +35,7 @@ class ServiceServiceProvider extends ServiceProvider
          * Start Version 1 Services
          */
         $this->app->bind(IAuthService::class, AuthService::class);
+        $this->app->bind(IPostService::class, PostService::class);
         /**
          * End Version 1 Services
          */
