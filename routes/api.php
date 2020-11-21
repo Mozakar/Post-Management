@@ -23,6 +23,30 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], f
     /**
      * Admin
      */
+    Route::group(['prefix' => 'panel', 'middleware' => ['auth:api']], function (){
+
+        /**
+         * Profile Controller
+         */
+        route::get('profile', 'UserController@getProfile')->name('users.v1_get_profile');
+        route::post('profile', 'UserController@updateProfile')->name('users.v1_update_profile');
+
+
+         /**
+          * Post
+          */
+         route::get('posts', 'PostController@get')->name('posts.v1_index');
+         route::get('posts/{id}/show', 'PostController@show')->name('posts.v1_show');
+         route::post('posts/create', 'PostController@create')->name('posts.v1_create');
+         route::post('posts/update', 'PostController@update')->name('posts.v1_update');
+         route::post('posts/update-status', 'PostController@updateStatus')->name('posts.v1_update_status');
+         route::get('posts/{id}/delete', 'PostController@delete')->name('posts.v1_delete');
+
+    });
+
+    /**
+     * Admin
+     */
     Route::group(['prefix' => 'panel', 'middleware' => ['auth:api', 'admin']], function (){
 
        /**
