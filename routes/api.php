@@ -42,6 +42,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], f
          route::post('posts/update-status', 'PostController@updateStatus')->name('posts.v1_update_status');
          route::get('posts/{id}/delete', 'PostController@delete')->name('posts.v1_delete');
 
+         Route::get('auth/logout', 'AuthController@logout');
+         Route::post('auth/logout', 'AuthController@logout');
     });
 
     /**
