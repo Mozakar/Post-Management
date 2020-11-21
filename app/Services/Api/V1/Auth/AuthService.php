@@ -83,7 +83,9 @@ class AuthService implements IAuthService
             'login_type' => $login_type,
             'email_or_mobile' => $emailOrMobile,
             'is_new_user' => $is_new_user,
+            'verification_code' => $verificationCode['data']
         ];
+        if($is_new_user) $response['redirect'] = route('users.v1_get_profile');
         return responseGenerator()->success($response);
     }
 
