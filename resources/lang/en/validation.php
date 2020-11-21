@@ -15,6 +15,7 @@ return [
     'user_not_found'    => 'User Not Found',
     'verify_code_expired'   => 'Your verification code expired',
     'verify_code_wrong' => 'verification code is incorrect',
+    'cant_delete_file'  => 'cant delete this file',
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
     'after' => 'The :attribute must be a date after :date.',

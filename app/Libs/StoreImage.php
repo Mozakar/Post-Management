@@ -1,5 +1,5 @@
 <?php
-namespace App\Libs\Helpers;
+namespace App\Libs;
 
 use Exception;
 use Illuminate\Support\Facades\Log;
